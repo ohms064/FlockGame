@@ -17,6 +17,7 @@ FetchContent_MakeAvailable(raylib)
 
 add_executable(FlappyFlock
     src/main.cpp
+    src/boid.cpp
 )
 
 target_link_libraries(FlappyFlock PRIVATE raylib)
