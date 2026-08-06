@@ -9,6 +9,8 @@ CMakeUserPresets.json
 
 # Visual Studio
 .vs/
+/CMakeSettings.json
+out/
 
 # Rider
 .idea/
@@ -18,4 +20,3 @@ CMakeUserPresets.json
 
 # Windows
 Thumbs.db
-/CMakeSettings.json
