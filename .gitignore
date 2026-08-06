@@ -1,0 +1,20 @@
+# Build output
+/build/
+
+# CMake
+CMakeUserPresets.json
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
