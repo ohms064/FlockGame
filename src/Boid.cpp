@@ -104,7 +104,7 @@ namespace
         
         void draw() const
         {
-            DrawCircle(position_.x, position_.y, 10, GREEN);
+            DrawCircle(position_.x, position_.y, 10, ignore_center_of_mass_? YELLOW : GREEN);
             DrawLine(position_.x, position_.y, position_.x + velocity_.x, position_.y + velocity_.y, RED);
         }
         

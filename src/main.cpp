@@ -1,5 +1,6 @@
 #pragma once
 
+#include <format>
 #include <raylib.h>
 #include <vector>
 #include "Boid.cpp"
@@ -24,6 +25,9 @@ int main()
         ClearBackground(SKYBLUE);
         
         DrawText("Boid test. Left click to add boid, move the mouse and the boids will follow.", PositionX, PositionY, 30, BLACK);
+        DrawText(std::format("Boids: {}", current_boids.size()).c_str(), 20, 70, 30, BLACK);
+        DrawText(std::format("Frame Count: {}", frame_count).c_str(), 250, 70, 30, BLACK);
+        DrawText(std::format("FPS: {}", GetFPS()).c_str(), 500, 70, 30, BLACK);
 
        if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
        {
@@ -46,14 +50,17 @@ int main()
             boid->draw();
             
             // Toggle follow of mouse to add some variety to the movement
-            if (frame_count > 120)
+            if (frame_count >= 120)
             {
                 boid->toggle_ignore_center_of_mass();
-                frame_count = 0;
             }
         }
         
         frame_count++;
+        if (frame_count > 120)
+        {
+            frame_count = 0;
+        }
 
         EndDrawing();
     }
