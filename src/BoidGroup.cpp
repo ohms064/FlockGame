@@ -51,7 +51,7 @@ public:
         // First update all directions
         for (const auto boid : current_boids_)
         {
-            boid->update_directions(current_boids_, GetMousePosition());
+            boid->update_directions(current_boids_, center_of_mass_);
         }
     }
     
